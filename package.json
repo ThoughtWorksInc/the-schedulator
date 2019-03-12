@@ -1,0 +1,24 @@
+{
+  "name": "xconf_app",
+  "version": "0.0.1",
+  "description": "The XCONF app for 2019",
+  "private": true,
+  "main": "index.js",
+  "repository": "git@git.thoughtworks.net:vjustov/xconf_app.git",
+  "author": "viktor.justo@thoughtworks.com",
+  "dependencies": {
+    "prop-types": "latest",
+    "react": "^16.8.4",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.0.17",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.85.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
