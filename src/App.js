@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Dropdown, Menu, Icon, List } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
-const style = {
-    marginLeft: 12,
-};
+const { Content, Meta, Header } = Card
 
 const data = [
     {
@@ -44,43 +42,40 @@ const data = [
     }
 ]
 
-
 class App extends Component {
+    
     render() {
-        const listItems = data.map(talk => <List.Item>
-            <List.Icon name='github' size='large' verticalAlign='middle' />
-            <List.Content>
-                <List.Header as='a'>{talk.name}</List.Header>
-                <List.Description as='a'>{talk.description}</List.Description>
-            </List.Content>
-        </List.Item>)
 
         return (
             <div>
-                <Menu attached='top'>
-                    <Dropdown item icon='wrench' simple>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>
-                                <Icon name='dropdown' />
-                                <span className='text'>New</span>
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                    <Menu.Item header>Xconf 2019</Menu.Item>
-                    <Menu.Menu position='right'>
-                        <div className='ui right aligned category search item'>
-                            <div className='ui transparent icon input'>
-                                <input className='prompt' type='text' placeholder='Search animals...' />
-                                <i className='search link icon' />
-                            </div>
-                            <div className='results' />
-                        </div>
-                    </Menu.Menu>
-                </Menu>
+                <Card>
+                    <Content>
+                        <Header>Manchester</Header>
+                        <Meta>
+                            <span className='date'>July Sometime 2019</span>
+                        </Meta>
+                    </Content>
+                </Card>
 
-                <List divided relaxed>
-                    {listItems}
-                </List>
+                <Card onClick={() => alert("Hey ya!") }>
+                    <Content>
+                        <Header>
+                            Munich
+                        </Header>
+                        <Meta>
+                            <span className='date'>July Sometime 2019</span>
+                        </Meta>
+                    </Content>
+                </Card>
+
+                <Card>
+                    <Content>
+                        <Header>Barcelona</Header>
+                        <Meta>
+                            <span className='date'>July Sometime 2019</span>
+                        </Meta>
+                    </Content>
+                </Card>
             </div>
         );
     }
