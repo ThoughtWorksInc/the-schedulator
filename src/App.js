@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import LocationEntry from './components/LocationEntry';
+import LocationPage from './screens/LocationPage';
 
 class App extends Component {
 
@@ -23,23 +24,28 @@ class App extends Component {
     }
 
     render() {
-        return (
-            <>
-                {
-                    this.state.locations.map(l =>
+
+        if (this.state.selectedLocation) {
+            return <LocationPage selectedLocation={this.state.selectedLocation} />
+        } else {
+            return (
+                <>
+                    {this.state.locations.map(l =>
                         <LocationEntry
                             key={l.city}
                             city={l.city}
                             date={l.date}
-                            onClick={
-                                () => this.setState({ selectedLocation: l.city })
+                            onClick={() => {
+                                this.setState({ selectedLocation: l.city })
+                            }
                             }
                         />
-                    )
-                }
-            </>
-        );
+                    )}
+                </>
+            );
+        }
     }
 }
 
 export default App;
+ 
