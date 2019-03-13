@@ -3,9 +3,9 @@ import { Card } from 'semantic-ui-react'
 
 const { Content, Meta, Header } = Card
 
-const LocationEntry = ({ city, date }) => {
+const LocationEntry = ({ city, date, onClick }) => {
     return (
-        <Card onClick={() => console.log(city)} >
+        <Card onClick={onClick} >
             <Content>
                 <Header>{city}</Header>
                 <Meta>

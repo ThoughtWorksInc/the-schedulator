@@ -18,7 +18,8 @@ class App extends Component {
                 city: 'Barcelona',
                 date: 'July 06 2019'
             },
-        ]
+        ],
+        selectedLocation: undefined,
     }
 
     render() {
@@ -30,6 +31,9 @@ class App extends Component {
                             key={l.city}
                             city={l.city}
                             date={l.date}
+                            onClick={
+                                () => this.setState({ selectedLocation: l.city })
+                            }
                         />
                     )
                 }
