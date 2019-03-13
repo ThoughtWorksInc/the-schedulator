@@ -1,19 +1,19 @@
-import React from 'react';
-import { Card } from 'semantic-ui-react'
+import React from "react";
+import { Card } from "semantic-ui-react";
 
-const { Content, Meta, Header } = Card
+const { Content, Meta, Header } = Card;
 
 const LocationEntry = ({ city, date, onClick }) => {
-    return (
-        <Card onClick={onClick} >
-            <Content>
-                <Header>{city}</Header>
-                <Meta>
-                    <span className='date'>{date}</span>
-                </Meta>
-            </Content>
-        </Card>
-    )
-}
+  return (
+    <Card onClick={onClick}>
+      <Content>
+        <Header>{city}</Header>
+        <Meta>
+          <span className="date">{date}</span>
+        </Meta>
+      </Content>
+    </Card>
+  );
+};
 
 export default LocationEntry;
