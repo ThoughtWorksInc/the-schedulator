@@ -2,31 +2,22 @@ import React, { Component } from 'react';
 import './App.css';
 import LocationEntry from './components/LocationEntry';
 import LocationPage from './screens/LocationPage';
+import LocationsWithSchedules from './data/LocationsWithSchedules';
 
 class App extends Component {
 
     state = {
-        locations: [
-            {
-                city: 'Manchester',
-                date: 'July 04 2019'
-            },
-            {
-                city: 'Munich',
-                date: 'July 05 2019'
-            },
-            {
-                city: 'Barcelona',
-                date: 'July 06 2019'
-            },
-        ],
+        locations: LocationsWithSchedules,
         selectedLocation: undefined,
     }
 
     render() {
 
         if (this.state.selectedLocation) {
-            return <LocationPage selectedLocation={this.state.selectedLocation} />
+            return <LocationPage
+                city={this.state.selectedLocation.city}
+                schedule={this.state.selectedLocation.schedule}
+            />
         } else {
             return (
                 <>
@@ -36,7 +27,7 @@ class App extends Component {
                             city={l.city}
                             date={l.date}
                             onClick={() => {
-                                this.setState({ selectedLocation: l.city })
+                                this.setState({ selectedLocation: l })
                             }
                             }
                         />
@@ -48,4 +39,3 @@ class App extends Component {
 }
 
 export default App;
- 
