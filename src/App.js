@@ -38,7 +38,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 {
                     this.state.locations.map(l =>
                         <LocaltionEntry
@@ -48,7 +48,7 @@ class App extends Component {
                         />
                     )
                 }
-            </div>
+            </>
         );
     }
 }
