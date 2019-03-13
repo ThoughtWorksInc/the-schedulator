@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 
 const { Content, Meta, Header } = Card
 
-const LocaltionEntry = ({ city, date }) => {
+const LocationEntry = ({ city, date }) => {
     return (
         <Card onClick={() => console.log(city)} >
             <Content>
@@ -41,7 +41,7 @@ class App extends Component {
             <>
                 {
                     this.state.locations.map(l =>
-                        <LocaltionEntry
+                        <LocationEntry
                             key={l.city}
                             city={l.city}
                             date={l.date}
