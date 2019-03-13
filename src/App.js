@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Card } from 'semantic-ui-react'
-
-const { Content, Meta, Header } = Card
-
-const LocationEntry = ({ city, date }) => {
-    return (
-        <Card onClick={() => console.log(city)} >
-            <Content>
-                <Header>{city}</Header>
-                <Meta>
-                    <span className='date'>{date}</span>
-                </Meta>
-            </Content>
-        </Card>
-    )
-}
+import LocationEntry from './components/LocationEntry';
 
 class App extends Component {
 
