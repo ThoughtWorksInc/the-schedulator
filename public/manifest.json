@@ -1,9 +1,9 @@
 {
-  "short_name": "Sentiment Analysis",
-  "name": "Analyse Sentiment of sentences",
+  "short_name": "XCONF",
+  "name": "XCONF 2019",
   "icons": [
     {
-      "src": "sa-icon.ico",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

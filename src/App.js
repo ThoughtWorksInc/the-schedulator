@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import "./App.css";
-import LocationEntry from "./components/LocationEntry";
-import LocationPage from "./screens/LocationPage";
-import LocationsWithSchedules from "./data/LocationsWithSchedules";
+import React, { Component } from 'react';
+import './App.css';
+import LocationEntry from './components/LocationEntry';
+import LocationPage from './screens/LocationPage';
+import LocationsWithSchedules from './data/LocationsWithSchedules';
+import LandingPage from './screens/LandingPage.jsx';
 
 class App extends Component {
   state = {
@@ -30,9 +31,17 @@ class App extends Component {
                 this.setState({ selectedLocation: l });
               }}
             />
-          ))}
-        </>
-      );
+        } else {
+
+            return <LandingPage
+                locations={this.state.locations}
+                onClick={(location) => {
+                    this.setState({ selectedLocation: location })
+                }}
+            />
+
+
+        }
     }
   }
 }
