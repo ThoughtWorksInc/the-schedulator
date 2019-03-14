@@ -9,16 +9,25 @@ import LandingPage from "./screens/LandingPage";
 import { Container } from "semantic-ui-react";
 
 class App extends Component {
-  state = {
-    locations: LocationsWithSchedules,
-    selectedLocation: undefined
-  };
+  constructor(props){
+    super(props)
+    const cityName = localStorage.getItem('selectedLocation')
+    const selectedLocation = this.findLocationByName(cityName)
+
+    this.state = {
+      selectedLocation,
+      locations: LocationsWithSchedules,
+    };
+  }
+
+  findLocationByName = (name) => LocationsWithSchedules.find(location => location.city === name)
 
   render() {
     const { locations, selectedLocation } = this.state;
     const locationNames = locations.map(location => location.city)
     const handleCityClick = (cityName) => {
-      const selectedLocation = locations.find(location => location.city === cityName)
+      const selectedLocation = this.findLocationByName(cityName)
+      localStorage.setItem('selectedLocation', cityName);
       this.setState({ selectedLocation })
     }
 
