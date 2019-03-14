@@ -8,7 +8,6 @@ const TalkEntry = ({ entry }) => {
       <div>{entry.title}</div>
       <div>by {entry.speaker.name}</div>
       <Legend track={entry.track} />
-      <hr />
     </>
   );
 };
