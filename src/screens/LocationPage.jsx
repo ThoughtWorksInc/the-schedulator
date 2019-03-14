@@ -12,7 +12,14 @@ class LocationPage extends React.Component {
 
     let toRender;
     if (this.state.selectedTalk) {
-      toRender = <TalkDetails talk={this.state.selectedTalk} />;
+      toRender = (
+        <TalkDetails
+          talk={this.state.selectedTalk}
+          goBack={() => {
+            this.setState({ selectedTalk: undefined });
+          }}
+        />
+      );
     } else {
       toRender = (
         <List divided verticalAlign="middle">
