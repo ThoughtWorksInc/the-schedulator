@@ -14,7 +14,7 @@ const LocationsWithSchedule = [
           twitter: "@john"
         },
         abstract: "My awesome talk abstract",
-        track: undefined
+        track: "track 1"
       },
       {
         title: "My amazing talk",
@@ -27,7 +27,7 @@ const LocationsWithSchedule = [
           twitter: "@maria"
         },
         abstract: "My amazing talk abtract",
-        track: undefined
+        track: "track 2"
       }
     ]
   },
