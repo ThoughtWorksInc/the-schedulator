@@ -2,6 +2,7 @@ import React from "react";
 
 import { Container, Header, List } from "semantic-ui-react";
 import TalkEntry from "../components/TalkEntry";
+import TalkDetails from "../components/TalkDetails";
 
 const LocationPage = ({ city, schedule }) => (
   <Container text>
@@ -10,6 +11,7 @@ const LocationPage = ({ city, schedule }) => (
       {schedule.map(talk => (
         <List.Item>
           <TalkEntry talk={talk} />
+          <TalkDetails talk={talk} />
         </List.Item>
       ))}
     </List>

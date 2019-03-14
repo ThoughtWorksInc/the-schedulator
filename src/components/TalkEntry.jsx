@@ -4,11 +4,9 @@ const TalkEntry = ({ talk }) => {
   return (
     <>
       <div>{talk.time}</div>
-      <div>
-        {talk.title} by {talk.speaker}
-      </div>
-      <div>{talk.abstract}</div>
-      <div>{talk.speaker_bio}</div>
+      <div>{talk.title}</div>
+      <div>by {talk.speaker.name}</div>
+      <hr />
     </>
   );
 };
