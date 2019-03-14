@@ -6,33 +6,20 @@ import LocationsWithSchedules from './data/LocationsWithSchedules';
 import LandingPage from './screens/LandingPage.jsx';
 
 class App extends Component {
-  state = {
-    locations: LocationsWithSchedules,
-    selectedLocation: undefined
-  };
+    state = {
+        locations: LocationsWithSchedules,
+        selectedLocation: undefined
+    };
 
-  render() {
-    if (this.state.selectedLocation) {
-      return (
-        <LocationPage
-          city={this.state.selectedLocation.city}
-          schedule={this.state.selectedLocation.schedule}
-        />
-      );
-    } else {
-      return (
-        <>
-          {this.state.locations.map(l => (
-            <LocationEntry
-              key={l.city}
-              city={l.city}
-              date={l.date}
-              onClick={() => {
-                this.setState({ selectedLocation: l });
-              }}
-            />
+    render() {
+        if (this.state.selectedLocation) {
+            return (
+                <LocationPage
+                    city={this.state.selectedLocation.city}
+                    schedule={this.state.selectedLocation.schedule}
+                />
+            );
         } else {
-
             return <LandingPage
                 locations={this.state.locations}
                 onClick={(location) => {
@@ -43,7 +30,6 @@ class App extends Component {
 
         }
     }
-  }
 }
 
 export default App;
