@@ -12,15 +12,16 @@ class App extends Component {
   };
 
   render() {
+    let toRender;
     if (this.state.selectedLocation) {
-      return (
+      toRender = (
         <LocationPage
           city={this.state.selectedLocation.city}
           schedule={this.state.selectedLocation.schedule}
         />
       );
     } else {
-      return (
+      toRender = (
         <LandingPage
           locations={this.state.locations}
           onClick={location => {
@@ -29,6 +30,8 @@ class App extends Component {
         />
       );
     }
+
+    return toRender;
   }
 }
 
