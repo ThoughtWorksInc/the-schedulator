@@ -2,19 +2,39 @@ import React from "react";
 
 const Legend = ({ track }) => {
   const color = pickColor(track);
-  return <div style={{ "background-color": color }}>{track}</div>;
+  return <div style={{ backgroundColor: color }}>{track}</div>;
 };
 
-const TalkEntry = ({ talk }) => {
+const TalkEntry = ({ entry }) => {
   return (
     <>
-      <div>{talk.time}</div>
-      <div>{talk.title}</div>
-      <div>by {talk.speaker.name}</div>
-      <Legend track={talk.track} />
+      <div>{entry.time}</div>
+      <div>{entry.title}</div>
+      <div>by {entry.speaker.name}</div>
+      <Legend track={entry.track} />
       <hr />
     </>
   );
+};
+
+const BreakEntry = ({ entry }) => {
+  return (
+    <>
+      <div>{entry.time}</div>
+      <div>{entry.title}</div>
+      <hr />
+    </>
+  );
+};
+
+const ScheduleEntry = ({ entry }) => {
+  let toRender;
+  if (entry.type === "break") {
+    toRender = <BreakEntry entry={entry} />;
+  } else {
+    toRender = <TalkEntry entry={entry} />;
+  }
+  return toRender;
 };
 
 const pickColor = track => {
@@ -28,4 +48,4 @@ const pickColor = track => {
   }
 };
 
-export default TalkEntry;
+export default ScheduleEntry;

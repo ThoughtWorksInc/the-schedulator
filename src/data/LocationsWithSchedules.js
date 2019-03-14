@@ -5,7 +5,8 @@ const LocationsWithSchedule = [
     schedule: [
       {
         title: "My awesome talk",
-        time: "09: 00 - 10: 00",
+        time: "09: 00 - 09: 50",
+        type: "talk",
         speaker: {
           name: "John",
           bio: "Senior dev",
@@ -17,8 +18,14 @@ const LocationsWithSchedule = [
         track: "track 1"
       },
       {
+        title: "Break",
+        time: "09: 50 - 10: 00",
+        type: "break"
+      },
+      {
         title: "My amazing talk",
-        time: "10: 00 - 11: 00",
+        time: "10: 00 - 12: 00",
+        type: "talk",
         speaker: {
           name: "Maria",
           bio: "Senior dev",
@@ -28,6 +35,11 @@ const LocationsWithSchedule = [
         },
         abstract: "My amazing talk abtract",
         track: "track 2"
+      },
+      {
+        title: "Lunch Break",
+        time: "09: 50 - 10: 00",
+        type: "break"
       }
     ]
   },

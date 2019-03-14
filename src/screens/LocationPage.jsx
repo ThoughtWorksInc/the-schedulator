@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Header, List } from "semantic-ui-react";
-import TalkEntry from "../components/TalkEntry";
+import ScheduleEntry from "../components/TalkEntry";
 import TalkDetails from "../components/TalkDetails";
 
 class LocationPage extends React.Component {
@@ -23,7 +23,7 @@ class LocationPage extends React.Component {
                 this.setState({ selectedTalk: talk });
               }}
             >
-              <TalkEntry talk={talk} />
+              <ScheduleEntry entry={talk} />
             </List.Item>
           ))}
         </List>
