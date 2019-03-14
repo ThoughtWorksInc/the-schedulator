@@ -6,6 +6,7 @@ import LocationPage from "./screens/LocationPage";
 import Venue from "./screens/Venue";
 import LocationsWithSchedules from "./data/LocationsWithSchedules";
 import LandingPage from "./screens/LandingPage";
+import { Container } from "semantic-ui-react";
 
 class App extends Component {
   state = {
@@ -42,7 +43,9 @@ class App extends Component {
 
     return <>
       <NavBar cities={locationNames} onCityClick={handleCityClick} />
-      { toRender }
+      <Container>
+        {toRender}
+      </Container>
     </>;
   }
 }

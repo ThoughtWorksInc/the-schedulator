@@ -1,11 +1,11 @@
 import React from "react";
-import { Container, Header, Image, Divider } from "semantic-ui-react";
+import { Container, Header, Image, Divider, Button } from 'semantic-ui-react'
 
 const TalkDetails = ({ talk, goBack }) => {
   return (
     <>
-      <button onClick={goBack}>X</button>
-      <Image src={talk.speaker.img} floated="left" />
+      <Button circular icon='arrow left' onClick={goBack}/>
+      <Image src={talk.speaker.img} floated='left' />
       <Header>{talk.title}</Header>
       <div>by {talk.speaker.name}</div>
       <div>{talk.speaker.twitter}</div>
@@ -17,7 +17,9 @@ const TalkDetails = ({ talk, goBack }) => {
         <p>{talk.abstract}</p>
       </Container>
       <Divider />
-      <div>{talk.speaker.bio}</div>
+      <Container text>
+        <p>{talk.speaker.bio}</p>
+      </Container>
     </>
   );
 };
