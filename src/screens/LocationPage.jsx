@@ -29,9 +29,6 @@ class LocationPage extends React.Component {
               <List.Content>
                 <ScheduleEntry entry={talk} />
               </List.Content>
-              <List.Content floated="right" verticalAlign="middle">
-                <Label horizontal>Track 1</Label>
-              </List.Content>
             </List.Item>
           ))}
         </List>
