@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import LocationEntry from "./components/LocationEntry";
+import NavBar from "./components/NavBar";
 import LocationPage from "./screens/LocationPage";
+import Venue from "./screens/Venue";
 import LocationsWithSchedules from "./data/LocationsWithSchedules";
 import LandingPage from "./screens/LandingPage";
 
@@ -12,18 +14,25 @@ class App extends Component {
   };
 
   render() {
+    const { locations, selectedLocation } = this.state;
+    const locationNames = locations.map(location => location.city)
+    const handleCityClick = (cityName) => {
+      const selectedLocation = locations.find(location => location.city === cityName)
+      this.setState({ selectedLocation })
+    }
+
     let toRender;
-    if (this.state.selectedLocation) {
+    if (selectedLocation) {
       toRender = (
         <LocationPage
-          city={this.state.selectedLocation.city}
-          schedule={this.state.selectedLocation.schedule}
+          city={selectedLocation.city}
+          schedule={selectedLocation.schedule}
         />
       );
     } else {
       toRender = (
         <LandingPage
-          locations={this.state.locations}
+          locations={locations}
           onClick={location => {
             this.setState({ selectedLocation: location });
           }}
@@ -31,7 +40,10 @@ class App extends Component {
       );
     }
 
-    return toRender;
+    return <>
+      <NavBar cities={locationNames} onCityClick={handleCityClick} />
+      { toRender }
+    </>;
   }
 }
 
