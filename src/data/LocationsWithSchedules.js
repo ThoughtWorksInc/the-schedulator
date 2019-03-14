@@ -4,7 +4,7 @@ const LocationsWithSchedule = [
     date: "July 04 2019",
     schedule: [
       {
-        time: "9:45",
+        time: "09:45",
         title: "Keynote: Building Evolutionary Architectures",
         abstract:
           "For many years, software architecture was described as 'the parts that are hard to change later'. But then microservices showed that if architects build evolvability into the architecture, change becomes easier. This talk, based on the recently published book Building Evolutionary Architectures co-authored by Rebecca anf Neal Ford, investigates how to build evolvable systems. The software development ecosystem exists in a state of dynamic equilibrium, where any new tool, framework or technique leads to disruption and the establishment of a new equilibrium.",
@@ -21,7 +21,7 @@ const LocationsWithSchedule = [
       },
       {
         title: "Break",
-        time: "09: 50 - 10: 00",
+        time: "09:50",
         type: "break"
       },
       {
@@ -42,7 +42,7 @@ const LocationsWithSchedule = [
       },
       {
         title: "Lunch Break",
-        time: "09: 50 - 10: 00",
+        time: "09:50",
         type: "break"
       }
     ]
@@ -52,7 +52,7 @@ const LocationsWithSchedule = [
     date: "July 05 2019",
     schedule: [
       {
-        time: "11.50am",
+        time: "11:50",
         title: "A Microservices Journey",
         abstract:
           "The journey from monolith to microservices is different for every organization. A variety of challenges come with introducing microservices itself, but also organizational circumstances impacting the transformation that needed to be considered. In this talk I would like to share some lessons learned from a microservices journey from a startup perspective - and in hindsight, what to watch out for if starting the journey again.",
