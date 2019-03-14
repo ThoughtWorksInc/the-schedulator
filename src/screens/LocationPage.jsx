@@ -7,7 +7,7 @@ const LocationPage = ({ city, schedule }) => (
   <Container text>
     <Header as="h2">XConf {city} </Header>
     <List>
-      {schedule.map(s => (
+      {schedule.map(talk => (
         <List.Item>
           <TalkEntry talk={talk} />
         </List.Item>
