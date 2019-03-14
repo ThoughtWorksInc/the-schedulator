@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Header, List, Label } from "semantic-ui-react";
-import ScheduleEntry from "../components/TalkEntry";
+import ScheduleEntry from "../components/ScheduleEntry";
 import TalkDetails from "../components/TalkDetails";
 
 class LocationPage extends React.Component {
@@ -15,7 +15,7 @@ class LocationPage extends React.Component {
       toRender = <TalkDetails talk={this.state.selectedTalk} />;
     } else {
       toRender = (
-        <List divided verticalAlign='middle'>
+        <List divided verticalAlign="middle">
           {schedule.map(talk => (
             <List.Item
               key={talk.title}
@@ -29,7 +29,7 @@ class LocationPage extends React.Component {
               <List.Content>
                 <ScheduleEntry entry={talk} />
               </List.Content>
-              <List.Content floated='right' verticalAlign="middle">
+              <List.Content floated="right" verticalAlign="middle">
                 <Label horizontal>Track 1</Label>
               </List.Content>
             </List.Item>
