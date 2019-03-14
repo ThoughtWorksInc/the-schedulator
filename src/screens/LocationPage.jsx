@@ -1,4 +1,5 @@
 import React from "react";
+import TalkEntry from "../components/TalkEntry";
 
 const LocationPage = ({ city, schedule }) => {
   return (
@@ -6,8 +7,10 @@ const LocationPage = ({ city, schedule }) => {
       <div> {city} </div>
       <div>
         <ol>
-          {schedule.map(s => (
-            <li> {s.title} </li>
+          {schedule.map(talk => (
+            <li>
+              <TalkEntry talk={talk} />
+            </li>
           ))}
         </ol>
       </div>
