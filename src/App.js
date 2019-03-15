@@ -9,53 +9,50 @@ import LandingPage from "./screens/LandingPage";
 import { Container } from "semantic-ui-react";
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    const cityName = localStorage.getItem('selectedLocation')
-    const selectedLocation = this.findLocationByName(cityName)
+  constructor(props) {
+    super(props);
+    const cityName = localStorage.getItem("selectedLocation");
+    const selectedLocation = this.findLocationByName(cityName);
 
     this.state = {
       selectedLocation,
-      locations: LocationsWithSchedules,
+      locations: LocationsWithSchedules
     };
   }
 
-  findLocationByName = (name) => LocationsWithSchedules.find(location => location.city === name)
+  findLocationByName = name =>
+    LocationsWithSchedules.find(location => location.city === name);
 
   render() {
     const { locations, selectedLocation } = this.state;
-    const locationNames = locations.map(location => location.city)
-    const handleCityClick = (cityName) => {
-      const selectedLocation = this.findLocationByName(cityName)
-      localStorage.setItem('selectedLocation', cityName);
-      this.setState({ selectedLocation })
-    }
+    const locationNames = locations.map(location => location.city);
+    const handleCityClick = cityName => {
+      const selectedLocation = this.findLocationByName(cityName);
+      localStorage.setItem("selectedLocation", cityName);
+      this.setState({ selectedLocation });
+    };
 
     let toRender;
     if (selectedLocation) {
       toRender = (
         <LocationPage
+          key={selectedLocation.city}
           city={selectedLocation.city}
           schedule={selectedLocation.schedule}
         />
       );
     } else {
       toRender = (
-        <LandingPage
-          locations={locations}
-          onClick={location => {
-            this.setState({ selectedLocation: location });
-          }}
-        />
+        <LandingPage locations={locations} onClick={handleCityClick} />
       );
     }
 
-    return <>
-      <NavBar cities={locationNames} onCityClick={handleCityClick} />
-      <Container>
-        {toRender}
-      </Container>
-    </>;
+    return (
+      <>
+        <NavBar cities={locationNames} onCityClick={handleCityClick} />
+        <Container>{toRender}</Container>
+      </>
+    );
   }
 }
 
