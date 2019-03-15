@@ -5,6 +5,7 @@ import LocationPage from "./screens/LocationPage";
 import Venue from "./screens/Venue";
 import { default as locations } from "./data/LocationsWithSchedules";
 import LandingPage from "./screens/LandingPage";
+import Feedback from "./screens/Feedback";
 import { Router } from "@reach/router";
 import TalkDetails from "./components/TalkDetails";
 
@@ -21,6 +22,7 @@ class App extends Component {
           <TalkDetails locations={locations} path="/city/:city/:talkIndex" />
           <Venue locations={locations} path="/venue/:city" />
           <Venue locations={locations} path="/venue" />
+          <Feedback locations={locations} path="/feedback" />
         </Router>
       </>
     );
