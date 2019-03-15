@@ -31,6 +31,9 @@ class App extends Component {
       localStorage.setItem("selectedLocation", cityName);
       this.setState({ selectedLocation });
     };
+    const handleHomeClick = cityName => {
+      this.setState({ selectedLocation: undefined });
+    };
 
     let toRender;
     if (selectedLocation) {
@@ -49,7 +52,11 @@ class App extends Component {
 
     return (
       <>
-        <NavBar cities={locationNames} onCityClick={handleCityClick} />
+        <NavBar
+          cities={locationNames}
+          onCityClick={handleCityClick}
+          onHomeClick={handleHomeClick}
+        />
         <Container>{toRender}</Container>
       </>
     );
