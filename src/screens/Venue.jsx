@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "semantic-ui-react";
-import { Link } from "@reach/router";
 import LocationEntries from "../components/LocationEntries";
 
 const Venue = ({ locations, city }) => {
