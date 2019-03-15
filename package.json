@@ -7,6 +7,7 @@
   "repository": "git@git.thoughtworks.net:vjustov/xconf_app.git",
   "author": "viktor.justo@thoughtworks.com",
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "prop-types": "latest",
     "react": "^16.8.4",
     "react-dom": "^16.2.0",
