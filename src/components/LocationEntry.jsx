@@ -5,7 +5,7 @@ const { Content, Meta, Header } = Card;
 
 const LocationEntry = ({ city, date }) => {
   return (
-    <Card>
+    <Card fluid style={{ marginTop: '1em' }}>
       <Content>
         <Header>{city}</Header>
         <Meta>

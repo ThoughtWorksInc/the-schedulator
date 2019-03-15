@@ -14,8 +14,8 @@ const LandingPage = ({ locations }) => (
         diverse range of ThoughtWorks senior technologists working on our
         clients’ most complex challenges.
       </p>
+      <LocationEntries locations={locations} basePath="city" />
     </Container>
-    <LocationEntries locations={locations} basePath="city" />
   </>
 );
 
