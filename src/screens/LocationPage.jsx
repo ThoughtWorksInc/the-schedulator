@@ -1,62 +1,44 @@
 import React from "react";
 
-import { Container, Header, List, Responsive, Divider } from "semantic-ui-react";
-import ScheduleEntry from "../components/ScheduleEntry";
-import TalkDetails from "../components/TalkDetails";
+import { Header, List, Divider } from "semantic-ui-react";
 import Legend from "../components/Legend";
 
 class LocationPage extends React.Component {
   state = { selectedTalk: undefined };
 
   render() {
-    const { city, schedule } = this.props;
+    const { city, locations, navigate } = this.props;
+    const schedule = locations.find(l => l.city === city).schedule;
 
-    let toRender;
-    if (this.state.selectedTalk) {
-      toRender = (
-        <TalkDetails
-          talk={this.state.selectedTalk}
-          goBack={() => {
-            this.setState({ selectedTalk: undefined });
-          }}
-        />
-      );
-    } else {
-      toRender = (<>
-        {/* <Responsive position='right' {...Responsive.onlyComputer} >
-        </Responsive>
-        <Responsive as={List} divided verticalAlign="middle" {...Responsive.onlyMobile} > */}
-
-          {schedule.map(talk => (
-            <List.Item
-              key={talk.title}
-              onClick={() => {
-                this.setState({ selectedTalk: talk });
-              }}
-            >
-              <List.Content content={talk.time} />
-              {
-                talk.type === "talk" ? 
-                <List.Content content={talk.title} description={talk.speaker.name} />
-                : <List.Content content="Break" />
-              }
-              <List.Content>
-              <Legend track={talk.track} />
-              </List.Content>
-            </List.Item>
-          ))}
-
-
-        {/* </Responsive> */}
-      </>
-      );
-    }
+    const listContent = content => {
+      if (content.type === "talk") {
+        return (
+          <List.Content
+            content={content.title}
+            description={content.speaker.name}
+          />
+        );
+      } else {
+        return <List.Content content="Break" />;
+      }
+    };
 
     return (
       <>
-        <Header as="h2" style={{ marginTop: '1em' }}>XConf {city} </Header>
+        <Header as="h2" style={{ marginTop: "1em" }}>
+          XConf {city}{" "}
+        </Header>
         <Divider />
-        {toRender}
+
+        {schedule.map((talk, index) => (
+          <List.Item key={talk.title} onClick={() => navigate(`${index}`)}>
+            <List.Content content={talk.time} />
+            {listContent(talk)}
+            <List.Content>
+              <Legend track={talk.track} />
+            </List.Content>
+          </List.Item>
+        ))}
       </>
     );
   }

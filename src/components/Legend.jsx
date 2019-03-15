@@ -17,7 +17,7 @@ const pickColor = track => {
     case "track 2":
       return "orange";
     default:
-      return "none";
+      return "grey";
   }
 };
 

@@ -1,11 +1,13 @@
 import React from "react";
-import { Container, Header, Image, Divider, Button } from 'semantic-ui-react'
+import { Container, Header, Image, Divider, Button } from "semantic-ui-react";
 
-const TalkDetails = ({ talk, goBack }) => {
+const TalkDetails = ({ locations, city, talkIndex, navigate }) => {
+  const talk = locations.find(l => l.city === city).schedule[talkIndex];
+
   return (
     <>
-      <Button circular icon='arrow left' onClick={goBack}/>
-      <Image src={talk.speaker.img} floated='left' />
+      <Button circular icon="arrow left" onClick={() => navigate(`..`)} />
+      <Image src={talk.speaker.img} floated="left" />
       <Header>{talk.title}</Header>
       <div>by {talk.speaker.name}</div>
       <div>{talk.speaker.twitter}</div>

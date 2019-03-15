@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import LocationEntry from "./components/LocationEntry";
 import NavBar from "./components/NavBar";
 import LocationPage from "./screens/LocationPage";
 import Venue from "./screens/Venue";
 import LocationsWithSchedules from "./data/LocationsWithSchedules";
 import LandingPage from "./screens/LandingPage";
-import { Container } from "semantic-ui-react";
+import { Router } from "@reach/router";
+import TalkDetails from "./components/TalkDetails";
 
 class App extends Component {
   constructor(props) {
@@ -35,29 +35,17 @@ class App extends Component {
       this.setState({ selectedLocation: undefined });
     };
 
-    let toRender;
-    if (selectedLocation) {
-      toRender = (
-        <LocationPage
-          key={selectedLocation.city}
-          city={selectedLocation.city}
-          schedule={selectedLocation.schedule}
-        />
-      );
-    } else {
-      toRender = (
-        <LandingPage locations={locations} onClick={handleCityClick} />
-      );
-    }
-
     return (
       <>
-        <NavBar
-          cities={locationNames}
-          onCityClick={handleCityClick}
-          onHomeClick={handleHomeClick}
-        />
-        <Container>{toRender}</Container>
+        <NavBar cities={locationNames} />
+        <Router>
+          {/* <LandingPage locations={locations} default /> */}
+          <LandingPage locations={locations} path="/" default />
+          <LocationPage locations={locations} path="/city/:city" />
+          <TalkDetails locations={locations} path="/city/:city/:talkIndex" />
+          <Venue locations={locations} path="/venue" />
+          <Venue locations={locations} path="/venue/:city" />
+        </Router>
       </>
     );
   }

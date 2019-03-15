@@ -1,4 +1,4 @@
-import React, { useState, createRef } from "react";
+import React, { useState } from "react";
 import {
   Menu,
   Responsive,
@@ -7,25 +7,29 @@ import {
   Sidebar,
   Divider
 } from "semantic-ui-react";
+import { navigate, Link } from "@reach/router";
 
-const NavBar = ({ cities, onCityClick, onHomeClick }) => {
+const NavBar = ({ cities }) => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
-  const closeSidebar = () => setSidebarVisible(false);
-  const handleMenuClick = (cb, ...args) => {
-    closeSidebar();
-    cb(...args);
+  const handleMenuClick = path => {
+    setSidebarVisible(false);
+    navigate(path);
   };
   const menuItems = cities.map(city => (
-    <Menu.Item header onClick={() => handleMenuClick(onCityClick, city)}>
+    <Menu.Item
+      header
+      key={city}
+      onClick={() => handleMenuClick(`/city/${city}`)}
+    >
       {city}
     </Menu.Item>
   ));
 
   return (
     <Menu attached="top">
-      <Menu.Item header onClick={onHomeClick}>
-        Xconf 2019
-      </Menu.Item>
+      <Link to="/">
+        <Menu.Item header>Xconf 2019</Menu.Item>
+      </Link>
       <Responsive as={Menu.Menu} position="right" {...Responsive.onlyComputer}>
         {menuItems}
         <Menu.Item header>Venue</Menu.Item>
@@ -40,14 +44,14 @@ const NavBar = ({ cities, onCityClick, onHomeClick }) => {
           animation={"scale down"}
           direction={"right"}
           visible={sidebarVisible}
-          onHide={closeSidebar}
+          onHide={() => setSidebarVisible(false)}
         >
           {menuItems}
           <Divider />
-          <Menu.Item header onClick={closeSidebar}>
+          <Menu.Item header onClick={() => handleMenuClick("/venue")}>
             Venue
           </Menu.Item>
-          <Menu.Item header onClick={closeSidebar}>
+          <Menu.Item header onClick={() => handleMenuClick("/feedback")}>
             Feedback
           </Menu.Item>
         </Sidebar>
