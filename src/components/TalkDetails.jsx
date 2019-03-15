@@ -6,20 +6,18 @@ const TalkDetails = ({ locations, city, talkIndex, navigate }) => {
 
   return (
     <>
-      <Button circular icon="arrow left" onClick={() => navigate(`..`)} />
-      <Image src={talk.speaker.img} floated="left" />
-      <Header>{talk.title}</Header>
-      <div>by {talk.speaker.name}</div>
-      <div>{talk.speaker.twitter}</div>
-      <div>{talk.speaker.homepage}</div>
-      <div>{talk.time}</div>
-      <div>{talk.track}</div>
-      <Divider />
       <Container text>
+        <Button circular icon="arrow left" onClick={() => navigate(`..`)} />
+        <Image src={talk.speaker.img} floated="left" />
+        <Header>{talk.title}</Header>
+        <div>by {talk.speaker.name}</div>
+        <div>{talk.speaker.twitter}</div>
+        <div>{talk.speaker.homepage}</div>
+        <div>{talk.time}</div>
+        <div>{talk.track}</div>
+        <Divider />
         <p>{talk.abstract}</p>
-      </Container>
-      <Divider />
-      <Container text>
+        <Divider />
         <p>{talk.speaker.bio}</p>
       </Container>
     </>

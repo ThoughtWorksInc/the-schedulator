@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, List, Divider } from "semantic-ui-react";
+import { Header, List, Divider, Container } from "semantic-ui-react";
 import Legend from "../components/Legend";
 
 const LocationPage = ({ city, locations, navigate }) => {
@@ -19,7 +19,8 @@ const LocationPage = ({ city, locations, navigate }) => {
   };
 
   return (
-    <>
+    <Container>
+
       <Header as="h2" style={{ marginTop: "1em" }}>
         XConf {city}{" "}
       </Header>
@@ -34,7 +35,7 @@ const LocationPage = ({ city, locations, navigate }) => {
           </List.Content>
         </List.Item>
       ))}
-    </>
+      </Container>
   );
 };
 
