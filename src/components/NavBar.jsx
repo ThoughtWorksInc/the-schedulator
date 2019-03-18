@@ -15,15 +15,26 @@ const NavBar = ({ cities }) => {
     setSidebarVisible(false);
     navigate(path);
   };
+
   const menuItems = cities.map(city => (
-    <Menu.Item
-      header
-      key={city}
-      onClick={() => handleMenuClick(`/city/${city}`)}
-    >
+    <Menu.Item header key={city} onClick={() => navigateToCity(city)}>
       {city}
     </Menu.Item>
   ));
+
+  const navigateToCity = city => {
+    localStorage.setItem("selectedLocation", city);
+    handleMenuClick(`/city/${city}`);
+  };
+
+  const navigateToVenue = () => {
+    const selectedLocation = localStorage.getItem("selectedLocation");
+    if (selectedLocation) {
+      handleMenuClick(`/venue/${selectedLocation}`);
+    } else {
+      handleMenuClick("/venue");
+    }
+  };
 
   return (
     <Menu attached="top">
@@ -48,7 +59,7 @@ const NavBar = ({ cities }) => {
         >
           {menuItems}
           <Divider />
-          <Menu.Item header onClick={() => handleMenuClick("/venue")}>
+          <Menu.Item header onClick={navigateToVenue}>
             Venue
           </Menu.Item>
           <Menu.Item header onClick={() => handleMenuClick("/feedback")}>
