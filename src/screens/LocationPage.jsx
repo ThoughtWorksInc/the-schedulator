@@ -6,13 +6,19 @@ import Api from "../Api";
 const LocationPage = ({ city, navigate }) => {
   const schedule = Api.getScheduleForCity(city); // locations.find(l => l.city === city).schedule;
 
-  const listContent = content => {
+  const listContent = (content, index) => {
     if (content.type === "talk") {
       return (
-        <List.Content
-          content={content.title}
-          description={content.speaker.name}
-        />
+        <List.Item key={content.title} onClick={() => navigate(`${index}`)}>
+          <List.Content content={content.time} />
+          <List.Content
+            content={content.title}
+            description={content.speaker.name}
+          />
+          <List.Content>
+            <Legend track={content.track} />
+          </List.Content>
+        </List.Item>
       );
     } else {
       return <List.Content content="Break" />;
@@ -25,16 +31,7 @@ const LocationPage = ({ city, navigate }) => {
         XConf {city}{" "}
       </Header>
       <Divider />
-
-      {schedule.map((talk, index) => (
-        <List.Item key={talk.title} onClick={() => navigate(`${index}`)}>
-          <List.Content content={talk.time} />
-          {listContent(talk)}
-          <List.Content>
-            <Legend track={talk.track} />
-          </List.Content>
-        </List.Item>
-      ))}
+      {schedule.map((talk, index) => listContent(talk, index))}
     </Container>
   );
 };
