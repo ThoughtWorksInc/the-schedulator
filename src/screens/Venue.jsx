@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 import LocationEntries from "../components/LocationEntries";
 
-const Venue = ({ locations, city }) => {
+const Venue = ({ city }) => {
   if (city) {
     return (
       <Container>
@@ -25,16 +25,16 @@ const Venue = ({ locations, city }) => {
             width="100%"
             height="600"
             src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Bothestra%C3%9Fe%2011%2081675%20M%C3%BCnchen+(Thoughtworks)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
+            marginHeight="0"
+            marginWidth="0"
           />
         </div>
       </Container>
     );
   } else {
-    return <LocationEntries locations={locations} basePath="venue" />;
+    return <LocationEntries basePath="venue" />;
   }
 };
 

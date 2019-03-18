@@ -1,8 +1,9 @@
 import React from "react";
 import { Container, Header, Image, Divider, Button } from "semantic-ui-react";
+import API from "../Api";
 
-const TalkDetails = ({ locations, city, talkIndex, navigate }) => {
-  const talk = locations.find(l => l.city === city).schedule[talkIndex];
+const TalkDetails = ({ city, talkIndex, navigate }) => {
+  const talk = API.getTalkAtIndexForCity(city, talkIndex);
 
   return (
     <>

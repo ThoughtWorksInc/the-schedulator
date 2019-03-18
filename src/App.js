@@ -8,21 +8,29 @@ import LandingPage from "./screens/LandingPage";
 import Feedback from "./screens/Feedback";
 import { Router } from "@reach/router";
 import TalkDetails from "./components/TalkDetails";
+import API from "./Api";
 
 class App extends Component {
-  render() {
-    const locationNames = locations.map(location => location.city);
+  constructor(props) {
+    super(props);
 
+    const locationNames = API.getCities();
+    this.state = {
+      locationNames: locationNames
+    };
+  }
+
+  render() {
     return (
       <>
-        <NavBar cities={locationNames} />
+        <NavBar cities={this.state.locationNames} />
         <Router>
-          <LandingPage locations={locations} path="/" default />
-          <LocationPage locations={locations} path="/city/:city" />
-          <TalkDetails locations={locations} path="/city/:city/:talkIndex" />
-          <Venue locations={locations} path="/venue/:city" />
-          <Venue locations={locations} path="/venue" />
-          <Feedback locations={locations} path="/feedback" />
+          <LandingPage path="/" default />
+          <LocationPage path="/city/:city" />
+          <TalkDetails path="/city/:city/:talkIndex" />
+          <Venue path="/venue/:city" />
+          <Venue path="/venue" />
+          <Feedback path="/feedback" />
         </Router>
       </>
     );

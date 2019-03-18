@@ -1,9 +1,10 @@
 import React from "react";
 import { Header, List, Divider, Container } from "semantic-ui-react";
 import Legend from "../components/Legend";
+import Api from "../Api";
 
-const LocationPage = ({ city, locations, navigate }) => {
-  const schedule = locations.find(l => l.city === city).schedule;
+const LocationPage = ({ city, navigate }) => {
+  const schedule = Api.getScheduleForCity(city); // locations.find(l => l.city === city).schedule;
 
   const listContent = content => {
     if (content.type === "talk") {
@@ -20,7 +21,6 @@ const LocationPage = ({ city, locations, navigate }) => {
 
   return (
     <Container>
-
       <Header as="h2" style={{ marginTop: "1em" }}>
         XConf {city}{" "}
       </Header>
@@ -35,7 +35,7 @@ const LocationPage = ({ city, locations, navigate }) => {
           </List.Content>
         </List.Item>
       ))}
-      </Container>
+    </Container>
   );
 };
 
