@@ -21,7 +21,12 @@ const LocationPage = ({ city, navigate }) => {
         </List.Item>
       );
     } else {
-      return <List.Content content="Break" />;
+      return (
+        <>
+          <List.Content content={content.time} />
+          <List.Content content="Break" />
+        </>
+      );
     }
   };
 
