@@ -11,19 +11,10 @@ import TalkDetails from "./components/TalkDetails";
 import API from "./Api";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    const locationNames = API.getCities();
-    this.state = {
-      locationNames: locationNames
-    };
-  }
-
   render() {
     return (
       <>
-        <NavBar cities={this.state.locationNames} />
+        <NavBar cities={API.getCities()} />
         <Router>
           <LandingPage path="/" default />
           <LocationPage path="/city/:city" />
