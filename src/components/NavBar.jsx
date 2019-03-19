@@ -17,7 +17,7 @@ const NavBar = ({ days }) => {
   };
 
   console.log(selectedLocation);
-  const citiesMenuItems = days.map(day => (
+  const daysMenuItems = days.map(day => (
     <Menu.Item
       header
       key={day}
@@ -30,7 +30,8 @@ const NavBar = ({ days }) => {
 
   const menuItems = (
     <>
-      {citiesMenuItems}
+      <Menu.Item header>Days:</Menu.Item>
+      {daysMenuItems}
       <Divider fitted />
       <Menu.Item header onClick={() => handleMenuClick("/venue")}>
         Venue
