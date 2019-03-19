@@ -1,7 +1,7 @@
 const LocationsWithSchedule = [
   {
-    city: "Manchester",
-    date: "July 04 2019",
+    city: "First",
+    date: "May 10 2019",
     schedule: [
       {
         time: "09:45",
@@ -48,8 +48,8 @@ const LocationsWithSchedule = [
     ]
   },
   {
-    city: "Munich",
-    date: "July 05 2019",
+    city: "Second",
+    date: "May 11 2019",
     schedule: [
       {
         time: "11:50",
@@ -69,9 +69,25 @@ const LocationsWithSchedule = [
     ]
   },
   {
-    city: "Barcelona",
-    date: "July 06 2019",
-    schedule: []
+    city: "Third",
+    date: "May 12 2019",
+    schedule: [
+      {
+        time: "11:50",
+        title: "A Microservices Journey",
+        abstract:
+          "The journey from monolith to microservices is different for every organization. A variety of challenges come with introducing microservices itself, but also organizational circumstances impacting the transformation that needed to be considered. In this talk I would like to share some lessons learned from a microservices journey from a startup perspective - and in hindsight, what to watch out for if starting the journey again.",
+        type: "talk",
+        speaker: {
+          name: "Susanne Kaiser",
+          bio: "Senior dev",
+          img: "https://robohash.org/YOUR-TEXT.png?size=150x150&set=set3",
+          homepage: "https://www.google.com",
+          twitter: "maria"
+        },
+        track: "track 1"
+      }
+    ]
   }
 ];
 
