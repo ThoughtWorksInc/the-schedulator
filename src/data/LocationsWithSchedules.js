@@ -15,7 +15,7 @@ const LocationsWithSchedule = [
             "Dr. Rebecca Parsons has decades-long applications development experience across a range of industries and systems. Her technical experience includes leading the creation of large-scale distributed object applications and the integration of disparate systems. Separate from her passion for deep technology, Dr. Parsons is a strong advocate for diversity in the techn industry. Committed to increasing the number of women in coding and STEM fields, Dr. Parsons served on the board of CodeChix and acted as an advisor to Women Who Code.",
           img: "https://robohash.org/YOUR-TEXT.png?size=150x150&set=set3",
           homepage: undefined,
-          twitter: "@john"
+          twitter: "john"
         },
         track: "track 1"
       },
@@ -35,8 +35,8 @@ const LocationsWithSchedule = [
           name: "Marcos Mercuri & Daniel Lockman",
           bio: "Senior dev",
           img: "https://robohash.org/YOUR-TEXT.png?size=150x150&set=set3",
-          homepage: "maria.com",
-          twitter: "@maria"
+          homepage: "https://www.google.com",
+          twitter: "maria"
         },
         track: "track 2"
       },
@@ -61,8 +61,8 @@ const LocationsWithSchedule = [
           name: "Susanne Kaiser",
           bio: "Senior dev",
           img: "https://robohash.org/YOUR-TEXT.png?size=150x150&set=set3",
-          homepage: "maria.com",
-          twitter: "@maria"
+          homepage: "https://www.google.com",
+          twitter: "maria"
         },
         track: "track 1"
       }
