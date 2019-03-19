@@ -6,8 +6,9 @@ import API from "../../Api";
 import { Redirect } from "@reach/router";
 
 const LandingPage = () => {
-  const locations = API.getLocations();
+  const locations = API.getConferenceSchedule();
 
+  console.log(locations);
   const selectedDay = localStorage.getItem("selectedLocation");
 
   let toRender;
@@ -25,7 +26,7 @@ const LandingPage = () => {
             access to a diverse range of ThoughtWorks senior technologists
             working on our clients’ most complex challenges.
           </p>
-          <LocationEntries locations={locations} basePath="city" />
+          <LocationEntries locations={locations} basePath="day" />
         </Container>
       </>
     );

@@ -1,24 +1,24 @@
-import { default as locations } from "./data/LocationsWithSchedules";
+import { default as conferenceSchedule } from "./data/ConferenceSchedule";
 
 class Api {
   constructor() {
     // get the locations instead of reading them from a js file
   }
 
-  getLocations() {
-    return locations;
+  getConferenceSchedule() {
+    return conferenceSchedule;
   }
 
   getDays() {
-    return locations.map(location => location.day);
+    return conferenceSchedule.map(location => location.day);
   }
 
   getScheduleForDay(day) {
-    return locations.find(l => l.day === day).schedule;
+    return conferenceSchedule.find(l => l.day === day).schedule;
   }
 
   getTalkAtIndexForDay(day, talkIndex) {
-    return locations.find(l => l.day === day).schedule[talkIndex];
+    return conferenceSchedule.find(l => l.day === day).schedule[talkIndex];
   }
 }
 

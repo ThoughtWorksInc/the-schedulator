@@ -3,11 +3,11 @@ import { Card } from "semantic-ui-react";
 
 const { Content, Meta, Header } = Card;
 
-const LocationEntry = ({ city, date }) => {
+const LocationEntry = ({ day, date }) => {
   return (
-    <Card fluid style={{ marginTop: '1em' }}>
+    <Card fluid style={{ marginTop: "1em" }}>
       <Content>
-        <Header>{city}</Header>
+        <Header>{day}</Header>
         <Meta>
           <span className="date">{date}</span>
         </Meta>

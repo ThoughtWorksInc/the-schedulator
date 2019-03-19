@@ -1,4 +1,4 @@
-const LocationsWithSchedule = [
+const ConferenceSchedule = [
   {
     day: "First",
     date: "May 10 2019",
@@ -91,4 +91,4 @@ const LocationsWithSchedule = [
   }
 ];
 
-export default LocationsWithSchedule;
+export default ConferenceSchedule;

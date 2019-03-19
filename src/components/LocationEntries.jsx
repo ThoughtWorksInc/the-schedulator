@@ -4,14 +4,14 @@ import LocationEntry from "./LocationEntry";
 import API from "../Api";
 
 const LocationEntries = ({ basePath }) => {
-  const locations = API.getLocations();
+  const locations = API.getConferenceSchedule();
   const locationEntries = locations.map(l => (
     <Link
-      to={`/${basePath}/${l.city}`}
-      key={l.city}
-      onClick={() => localStorage.setItem("selectedLocation", l.city)}
+      to={`/${basePath}/${l.day}`}
+      key={l.day}
+      onClick={() => localStorage.setItem("selectedLocation", l.day)}
     >
-      <LocationEntry city={l.city} date={l.date} />
+      <LocationEntry day={l.day} date={l.date} />
     </Link>
   ));
   return <>{locationEntries}</>;

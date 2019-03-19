@@ -11,7 +11,7 @@ const NavBar = ({ days }) => {
     navigate(path);
   };
 
-  const navigateToCity = day => {
+  const navigateToDay = day => {
     localStorage.setItem("selectedLocation", day);
     handleMenuClick(`/day/${day}`);
   };
@@ -21,7 +21,7 @@ const NavBar = ({ days }) => {
     <Menu.Item
       header
       key={day}
-      onClick={() => navigateToCity(day)}
+      onClick={() => navigateToDay(day)}
       active={day === selectedLocation}
     >
       {day}
