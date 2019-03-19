@@ -11,6 +11,8 @@ import { navigate, Link } from "@reach/router";
 
 const NavBar = ({ cities }) => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
+  const selectedLocation = localStorage.getItem("selectedLocation");
+
   const handleMenuClick = path => {
     setSidebarVisible(false);
     navigate(path);
@@ -22,7 +24,6 @@ const NavBar = ({ cities }) => {
   };
 
   const navigateToVenue = () => {
-    const selectedLocation = localStorage.getItem("selectedLocation");
     if (selectedLocation) {
       handleMenuClick(`/venue/${selectedLocation}`);
     } else {
@@ -30,16 +31,22 @@ const NavBar = ({ cities }) => {
     }
   };
 
+  console.log(selectedLocation);
   const citiesMenuItems = cities.map(city => (
-    <Menu.Item header key={city} onClick={() => navigateToCity(city)}>
+    <Menu.Item
+      header
+      key={city}
+      onClick={() => navigateToCity(city)}
+      active={city == selectedLocation}
+    >
       {city}
     </Menu.Item>
   ));
-  
+
   const menuItems = (
     <>
       {citiesMenuItems}
-      <Divider />
+      <Divider fitted />
       <Menu.Item header onClick={navigateToVenue}>
         Venue
       </Menu.Item>
@@ -48,7 +55,6 @@ const NavBar = ({ cities }) => {
       </Menu.Item>
     </>
   );
-
 
   return (
     <Menu attached="top">
@@ -63,7 +69,8 @@ const NavBar = ({ cities }) => {
           <Icon name="sidebar" />
         </Menu.Item>
         <Sidebar
-          as={Segment}
+          as={Menu}
+          vertical={true}
           animation={"scale down"}
           direction={"right"}
           visible={sidebarVisible}
