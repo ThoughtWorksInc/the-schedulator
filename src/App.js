@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <NavBar days={API.getCities()} />
+        <NavBar days={API.getDays()} />
         <Router>
           <LandingPage path="/" default />
           <LocationPage path="/day/:day" />

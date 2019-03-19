@@ -11,7 +11,7 @@ import API from "../Api";
 import Legend from "./Legend";
 
 const TalkDetails = ({ day, talkIndex, navigate }) => {
-  const talk = API.getTalkAtIndexForCity(day, talkIndex);
+  const talk = API.getTalkAtIndexForDay(day, talkIndex);
 
   const twitterHandle = talk.speaker.twitter ? (
     <List.Item key="twitter">

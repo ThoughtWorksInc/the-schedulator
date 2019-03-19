@@ -1,6 +1,6 @@
 const LocationsWithSchedule = [
   {
-    city: "First",
+    day: "First",
     date: "May 10 2019",
     schedule: [
       {
@@ -48,7 +48,7 @@ const LocationsWithSchedule = [
     ]
   },
   {
-    city: "Second",
+    day: "Second",
     date: "May 11 2019",
     schedule: [
       {
@@ -69,7 +69,7 @@ const LocationsWithSchedule = [
     ]
   },
   {
-    city: "Third",
+    day: "Third",
     date: "May 12 2019",
     schedule: [
       {

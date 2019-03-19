@@ -9,16 +9,16 @@ class Api {
     return locations;
   }
 
-  getCities() {
-    return locations.map(location => location.city);
+  getDays() {
+    return locations.map(location => location.day);
   }
 
-  getScheduleForCity(city) {
-    return locations.find(l => l.city === city).schedule;
+  getScheduleForDay(day) {
+    return locations.find(l => l.day === day).schedule;
   }
 
-  getTalkAtIndexForCity(city, talkIndex) {
-    return locations.find(l => l.city === city).schedule[talkIndex];
+  getTalkAtIndexForDay(day, talkIndex) {
+    return locations.find(l => l.day === day).schedule[talkIndex];
   }
 }
 

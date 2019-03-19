@@ -4,7 +4,7 @@ import Legend from "../components/Legend";
 import Api from "../Api";
 
 const LocationPage = ({ day, navigate }) => {
-  const schedule = Api.getScheduleForCity(day); // locations.find(l => l.city === city).schedule;
+  const schedule = Api.getScheduleForDay(day); // locations.find(l => l.city === city).schedule;
 
   const listContent = (content, index) => {
     if (content.type === "talk") {
