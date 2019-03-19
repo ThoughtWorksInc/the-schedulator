@@ -16,12 +16,6 @@ const NavBar = ({ cities }) => {
     navigate(path);
   };
 
-  const menuItems = cities.map(city => (
-    <Menu.Item header key={city} onClick={() => navigateToCity(city)}>
-      {city}
-    </Menu.Item>
-  ));
-
   const navigateToCity = city => {
     localStorage.setItem("selectedLocation", city);
     handleMenuClick(`/city/${city}`);
@@ -36,6 +30,26 @@ const NavBar = ({ cities }) => {
     }
   };
 
+  const citiesMenuItems = cities.map(city => (
+    <Menu.Item header key={city} onClick={() => navigateToCity(city)}>
+      {city}
+    </Menu.Item>
+  ));
+  
+  const menuItems = (
+    <>
+      {citiesMenuItems}
+      <Divider />
+      <Menu.Item header onClick={navigateToVenue}>
+        Venue
+      </Menu.Item>
+      <Menu.Item header onClick={() => handleMenuClick("/feedback")}>
+        Feedback
+      </Menu.Item>
+    </>
+  );
+
+
   return (
     <Menu attached="top">
       <Link to="/">
@@ -43,8 +57,6 @@ const NavBar = ({ cities }) => {
       </Link>
       <Responsive as={Menu.Menu} position="right" {...Responsive.onlyComputer}>
         {menuItems}
-        <Menu.Item header>Venue</Menu.Item>
-        <Menu.Item header>Feedback</Menu.Item>
       </Responsive>
       <Responsive as={Menu.Menu} position="right" {...Responsive.onlyMobile}>
         <Menu.Item onClick={() => setSidebarVisible(true)}>
@@ -58,13 +70,6 @@ const NavBar = ({ cities }) => {
           onHide={() => setSidebarVisible(false)}
         >
           {menuItems}
-          <Divider />
-          <Menu.Item header onClick={navigateToVenue}>
-            Venue
-          </Menu.Item>
-          <Menu.Item header onClick={() => handleMenuClick("/feedback")}>
-            Feedback
-          </Menu.Item>
         </Sidebar>
       </Responsive>
     </Menu>
