@@ -44,7 +44,7 @@ const NavBar = ({ days }) => {
   return (
     <Menu attached="top">
       <Link to="/">
-        <Menu.Item header>Xconf 2019</Menu.Item>
+        <Menu.Item header>DE Away Day 2019</Menu.Item>
       </Link>
       <Responsive as={Menu.Menu} position="right" {...Responsive.onlyComputer}>
         {menuItems}
