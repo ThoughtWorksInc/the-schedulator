@@ -3,7 +3,6 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import LocationPage from "./screens/LocationPage";
 import Venue from "./screens/Venue";
-import { default as locations } from "./data/LocationsWithSchedules";
 import LandingPage from "./screens/LandingPage";
 import Feedback from "./screens/Feedback";
 import { Router } from "@reach/router";
@@ -17,8 +16,8 @@ class App extends Component {
         <NavBar cities={API.getCities()} />
         <Router>
           <LandingPage path="/" default />
-          <LocationPage path="/city/:city" />
-          <TalkDetails path="/city/:city/:talkIndex" />
+          <LocationPage path="/day/:city" />
+          <TalkDetails path="/day/:city/:talkIndex" />
           <Venue path="/venue/:city" />
           <Venue path="/venue" />
           <Feedback path="/feedback" />

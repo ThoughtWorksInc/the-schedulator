@@ -3,8 +3,8 @@ import { Header, List, Divider, Container } from "semantic-ui-react";
 import Legend from "../components/Legend";
 import Api from "../Api";
 
-const LocationPage = ({ city, navigate }) => {
-  const schedule = Api.getScheduleForCity(city); // locations.find(l => l.city === city).schedule;
+const LocationPage = ({ city: day, navigate }) => {
+  const schedule = Api.getScheduleForCity(day); // locations.find(l => l.city === city).schedule;
 
   const listContent = (content, index) => {
     if (content.type === "talk") {
@@ -22,10 +22,10 @@ const LocationPage = ({ city, navigate }) => {
       );
     } else {
       return (
-        <>
+        <List.Item key={index}>
           <List.Content content={content.time} />
           <List.Content content="Break" />
-        </>
+        </List.Item>
       );
     }
   };
@@ -33,7 +33,7 @@ const LocationPage = ({ city, navigate }) => {
   return (
     <Container>
       <Header as="h2" style={{ marginTop: "1em" }}>
-        XConf {city}{" "}
+        DE Away Day - {day} day
       </Header>
       <Divider />
       {schedule.map((talk, index) => listContent(talk, index))}

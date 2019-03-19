@@ -3,16 +3,16 @@ import banner from "./banner.jpeg";
 import { Container, Image } from "semantic-ui-react";
 import LocationEntries from "../../components/LocationEntries";
 import API from "../../Api";
-import { Redirect, navigate } from "@reach/router";
+import { Redirect } from "@reach/router";
 
 const LandingPage = () => {
   const locations = API.getLocations();
 
-  const selectedLocation = localStorage.getItem("selectedLocation");
+  const selectedDay = localStorage.getItem("selectedLocation");
 
   let toRender;
-  if (selectedLocation) {
-    toRender = <Redirect to={`/city/${selectedLocation}`} noThrow />;
+  if (selectedDay) {
+    toRender = <Redirect to={`/day/${selectedDay}`} noThrow />;
   } else {
     toRender = (
       <>

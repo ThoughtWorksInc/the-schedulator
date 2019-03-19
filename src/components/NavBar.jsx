@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Menu,
-  Responsive,
-  Icon,
-  Segment,
-  Sidebar,
-  Divider
-} from "semantic-ui-react";
+import { Menu, Responsive, Icon, Sidebar, Divider } from "semantic-ui-react";
 import { navigate, Link } from "@reach/router";
 
 const NavBar = ({ cities }) => {
