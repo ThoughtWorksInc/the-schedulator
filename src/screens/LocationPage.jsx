@@ -11,6 +11,7 @@ const LocationPage = ({ day, navigate }) => {
       return (
         <List.Item key={content.title} onClick={() => navigate(`${index}`)}>
           <List.Content content={content.time} />
+          <List.Icon name="external square alternate" />
           <List.Content
             content={content.title}
             description={content.speaker.name}
@@ -24,6 +25,7 @@ const LocationPage = ({ day, navigate }) => {
       return (
         <List.Item key={index}>
           <List.Content content={content.time} />
+          <List.Icon name="like" />
           <List.Content content="Break" />
         </List.Item>
       );
