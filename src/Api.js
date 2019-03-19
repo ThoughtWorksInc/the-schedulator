@@ -10,15 +10,15 @@ class Api {
   }
 
   getDays() {
-    return conferenceSchedule.map(day => day.day);
+    return conferenceSchedule.map(d => d.day);
   }
 
   getScheduleForDay(day) {
-    return conferenceSchedule.find(day => day.day === day).schedule;
+    return conferenceSchedule.find(d => d.day === day).schedule;
   }
 
   getTalkAtIndexForDay(day, talkIndex) {
-    return conferenceSchedule.find(day => day.day === day).schedule[talkIndex];
+    return conferenceSchedule.find(d => d.day === day).schedule[talkIndex];
   }
 }
 
