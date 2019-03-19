@@ -13,12 +13,11 @@ class App extends Component {
   render() {
     return (
       <>
-        <NavBar cities={API.getCities()} />
+        <NavBar days={API.getCities()} />
         <Router>
           <LandingPage path="/" default />
-          <LocationPage path="/day/:city" />
-          <TalkDetails path="/day/:city/:talkIndex" />
-          <Venue path="/venue/:city" />
+          <LocationPage path="/day/:day" />
+          <TalkDetails path="/day/:day/:talkIndex" />
           <Venue path="/venue" />
           <Feedback path="/feedback" />
         </Router>

@@ -3,7 +3,7 @@ import { Header, List, Divider, Container } from "semantic-ui-react";
 import Legend from "../components/Legend";
 import Api from "../Api";
 
-const LocationPage = ({ city: day, navigate }) => {
+const LocationPage = ({ day, navigate }) => {
   const schedule = Api.getScheduleForCity(day); // locations.find(l => l.city === city).schedule;
 
   const listContent = (content, index) => {

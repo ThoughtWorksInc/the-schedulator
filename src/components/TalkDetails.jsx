@@ -10,8 +10,8 @@ import {
 import API from "../Api";
 import Legend from "./Legend";
 
-const TalkDetails = ({ city, talkIndex, navigate }) => {
-  const talk = API.getTalkAtIndexForCity(city, talkIndex);
+const TalkDetails = ({ day, talkIndex, navigate }) => {
+  const talk = API.getTalkAtIndexForCity(day, talkIndex);
 
   const twitterHandle = talk.speaker.twitter ? (
     <List.Item key="twitter">

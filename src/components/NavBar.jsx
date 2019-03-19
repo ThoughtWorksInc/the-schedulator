@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, Responsive, Icon, Sidebar, Divider } from "semantic-ui-react";
 import { navigate, Link } from "@reach/router";
 
-const NavBar = ({ cities }) => {
+const NavBar = ({ days }) => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const selectedLocation = localStorage.getItem("selectedLocation");
 
@@ -11,28 +11,20 @@ const NavBar = ({ cities }) => {
     navigate(path);
   };
 
-  const navigateToCity = city => {
-    localStorage.setItem("selectedLocation", city);
-    handleMenuClick(`/city/${city}`);
-  };
-
-  const navigateToVenue = () => {
-    if (selectedLocation) {
-      handleMenuClick(`/venue/${selectedLocation}`);
-    } else {
-      handleMenuClick("/venue");
-    }
+  const navigateToCity = day => {
+    localStorage.setItem("selectedLocation", day);
+    handleMenuClick(`/day/${day}`);
   };
 
   console.log(selectedLocation);
-  const citiesMenuItems = cities.map(city => (
+  const citiesMenuItems = days.map(day => (
     <Menu.Item
       header
-      key={city}
-      onClick={() => navigateToCity(city)}
-      active={city == selectedLocation}
+      key={day}
+      onClick={() => navigateToCity(day)}
+      active={day === selectedLocation}
     >
-      {city}
+      {day}
     </Menu.Item>
   ));
 
@@ -40,7 +32,7 @@ const NavBar = ({ cities }) => {
     <>
       {citiesMenuItems}
       <Divider fitted />
-      <Menu.Item header onClick={navigateToVenue}>
+      <Menu.Item header onClick={() => handleMenuClick("/venue")}>
         Venue
       </Menu.Item>
       <Menu.Item header onClick={() => handleMenuClick("/feedback")}>
