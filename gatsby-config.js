@@ -6,13 +6,21 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `content`,
-    //     path: `${__dirname}/content`
-    //   }
-    // },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-yaml`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/page-contents/germany-2019`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `meta`,
+        path: `${__dirname}/metadata`
+      }
+    }
   ]
 };

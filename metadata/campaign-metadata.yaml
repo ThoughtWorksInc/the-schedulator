@@ -1,0 +1,15 @@
+# This file is used to populate the venue details and some site specific metadata
+# data structure:
+# title:
+# locations:
+#   - city:
+#     venue:
+#       name:
+#       mapPlusCode:
+---
+title: Germany Away Day - 2019
+locations:
+  - city: Leipzig
+    venue:
+      name: Some not shady hotel
+      mapPlusCode: 89VG+9Q Leipzig
