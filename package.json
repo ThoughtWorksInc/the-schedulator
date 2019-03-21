@@ -8,9 +8,14 @@
   "author": "viktor.justo@thoughtworks.com",
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "gatsby": "^2.2.4",
+    "gatsby-plugin-react-helmet": "^3.0.10",
+    "gatsby-source-filesystem": "^2.0.27",
+    "gatsby-transformer-remark": "^2.3.7",
     "prop-types": "latest",
     "react": "^16.8.4",
     "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
     "react-scripts": "2.1.8",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.85.0"
