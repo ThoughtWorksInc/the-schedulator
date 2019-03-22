@@ -1,4 +1,4 @@
-This is the schedule app for the DE Away Day 2019, in Leipzig.
+This is generic mobile first web app aimed at preseting the schedule for a conference. In the current configuration will be used for the internal event TW DE Away Day 2019, in Leipzig.
 
 ## Starting the Web App Locally
 
