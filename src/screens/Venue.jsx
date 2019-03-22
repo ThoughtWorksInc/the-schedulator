@@ -19,6 +19,7 @@ const Venue = () => {
       {paragraphs}
       <div style={{ width: "100%" }}>
         <iframe
+          title="Venue"
           width="100%"
           height="600"
           src={mapUrl}
