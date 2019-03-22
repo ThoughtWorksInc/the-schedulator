@@ -1,10 +1,6 @@
 import { default as conferenceSchedule } from "./data/ConferenceSchedule";
 
 class Api {
-  constructor() {
-    // get the locations instead of reading them from a js file
-  }
-
   getConferenceSchedule() {
     return conferenceSchedule;
   }
