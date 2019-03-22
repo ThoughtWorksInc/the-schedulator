@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import LocationPage from "./screens/LocationPage";
@@ -9,21 +9,19 @@ import TalkDetails from "./components/TalkDetails";
 import API from "./Api";
 import LandingPage from "./screens/LandingPage";
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <NavBar days={API.getDays()} />
-        <Router>
-          <LandingPage path="/" default />
-          <LocationPage path="/day/:day" />
-          <TalkDetails path="/day/:day/:talkIndex" />
-          <Venue path="/venue" />
-          <Feedback path="/feedback" />
-        </Router>
-      </>
-    );
-  }
-}
+const App = () => {
+  return (
+    <>
+      <NavBar days={API.getDays()} />
+      <Router>
+        <LandingPage path="/" default />
+        <LocationPage path="/day/:day" />
+        <TalkDetails path="/day/:day/:talkIndex" />
+        <Venue path="/venue" />
+        <Feedback path="/feedback" />
+      </Router>
+    </>
+  );
+};
 
 export default App;
