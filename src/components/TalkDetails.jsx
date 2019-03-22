@@ -17,7 +17,11 @@ const TalkDetails = ({ day, talkIndex, navigate }) => {
     <List.Item key="twitter">
       <List.Icon name="twitter" color="blue" />
       <List.Content>
-        <a href={`https://twitter.com/${talk.speaker.twitter}`} target="_blank">
+        <a
+          href={`https://twitter.com/${talk.speaker.twitter}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {talk.speaker.twitter}
         </a>
       </List.Content>
@@ -28,7 +32,11 @@ const TalkDetails = ({ day, talkIndex, navigate }) => {
     <List.Item key="homepage">
       <List.Icon name="bookmark outline" color="grey" />
       <List.Content>
-        <a href={talk.speaker.homepage} target="_blank">
+        <a
+          href={talk.speaker.homepage}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {talk.speaker.homepage}
         </a>
       </List.Content>
