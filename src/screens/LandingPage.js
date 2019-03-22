@@ -14,11 +14,9 @@ const LandingPage = () => {
     toRender = <Redirect to={`/day/${selectedDay}`} noThrow />;
   } else {
     toRender = (
-      <>
-        <Container text>
-          <LocationEntries locations={locations} basePath="day" />
-        </Container>
-      </>
+      <Container text data-testid="landingpage-container">
+        <LocationEntries locations={locations} basePath="day" />
+      </Container>
     );
   }
 
