@@ -1,16 +1,9 @@
-This is the XCONF 2019 app.
+This is the schedule app for the DE Away Day 2019, in Leipzig.
 
 ## Starting the Web App Locally
-` $ yarn start `
+
+`$ yarn start`
 
 ## Building the application
-` $ yarn build `
 
-## Building the container
-` $ docker build -f Dockerfile -t $DOCKER_USER_ID/xconf_app . `
-
-## Running the container
-` $ docker run -d -p 80:80 $DOCKER_USER_ID/xconf_app `
-
-## Pushing the container
-` $ docker push $DOCKER_USER_ID/xconf_app `
+`$ yarn build`
