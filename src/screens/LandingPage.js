@@ -7,7 +7,6 @@ import { Redirect } from "@reach/router";
 const LandingPage = () => {
   const locations = API.getConferenceSchedule();
 
-  console.log(locations);
   const selectedDay = localStorage.getItem("selectedLocation");
 
   let toRender;

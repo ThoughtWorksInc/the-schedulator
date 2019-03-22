@@ -16,7 +16,6 @@ const NavBar = ({ days }) => {
     handleMenuClick(`/day/${day}`);
   };
 
-  console.log(selectedLocation);
   const daysMenuItems = days.map(day => (
     <Menu.Item
       header
