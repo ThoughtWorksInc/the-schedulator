@@ -5,7 +5,10 @@ import API from "../../Api";
 
 jest.mock("../../Api");
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  API.getScheduleForDay.mockRestore();
+});
 
 test("renders the header", () => {
   API.getScheduleForDay.mockReturnValue([]);
