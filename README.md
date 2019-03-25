@@ -7,3 +7,7 @@ This is generic mobile first web app aimed at preseting the schedule for a confe
 ## Building the application
 
 `$ yarn build`
+
+## Run all tests
+
+`$ yarn test`
