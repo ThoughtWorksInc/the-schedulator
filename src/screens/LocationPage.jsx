@@ -9,7 +9,11 @@ const LocationPage = ({ day, navigate }) => {
   const listContent = (content, index) => {
     if (content.type === "talk") {
       return (
-        <List.Item key={content.title} onClick={() => navigate(`${index}`)}>
+        <List.Item
+          key={content.title}
+          onClick={() => navigate(`${index}`)}
+          data-testid="talk-list-item"
+        >
           <List.Content content={content.time} />
           <List.Icon name="external square alternate" />
           <List.Content
@@ -23,7 +27,7 @@ const LocationPage = ({ day, navigate }) => {
       );
     } else {
       return (
-        <List.Item key={index}>
+        <List.Item key={index} data-testid="break-list-item">
           <List.Content content={content.time} />
           <List.Icon name="like" />
           <List.Content content="Break" />
@@ -34,7 +38,7 @@ const LocationPage = ({ day, navigate }) => {
 
   return (
     <Container>
-      <Header as="h2" style={{ marginTop: "1em" }}>
+      <Header as="h2" style={{ marginTop: "1em" }} data-testid="header">
         DE Away Day - {day} day
       </Header>
       <Divider />

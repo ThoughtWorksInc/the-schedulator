@@ -11,3 +11,13 @@ test("given no selected day, it will render the entries", () => {
 
   expect(getByTestId("landingpage-container")).toBeDefined();
 });
+
+test("given First as selected day, it will redirect", async () => {
+  localStorage.setItem("selectedLocation", "First");
+
+  const { queryByTestId } = render(<LandingPage />);
+
+  expect(queryByTestId("landingpage-container")).toBeNaN;
+
+  // TODO: figure out how to check if Redirect gets called (no reason to test Redirect by itself)
+});

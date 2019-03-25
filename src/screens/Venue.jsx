@@ -11,13 +11,13 @@ const Venue = () => {
       The closest train station is Fenchurch Street station (5 minswalk).The nearest tube stop is Tower Hill (5 mins walk) and Bank, Aldgate & Monument (15 mins walk). The nearest DLR station is Tower Gateway (7 minute walk). The following buses stop at the venue: 35, 47, 48, 149
     `
     .match(/.+\b/g)
-    .map(paragraph => <p>{paragraph.trim()}</p>);
+    .map((paragraph, index) => <p key={index}>{paragraph.trim()}</p>);
 
   return (
-    <Container>
+    <Container data-testid="venue-container">
       {address}
       {paragraphs}
-      <div style={{ width: "100%" }}>
+      <div style={{ width: "100%" }} data-testid="map-iframe">
         <iframe
           title="Venue"
           width="100%"
