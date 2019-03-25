@@ -37,7 +37,7 @@ test("renders 1 talk with no break", () => {
 
   expect(getByTestId("header")).toBeDefined();
   expect(getByTestId("talk-list-item")).toBeDefined();
-  expect(queryByTestId("break-list-item")).toBeNaN;
+  expect(queryByTestId("break-list-item")).toBeNull();
 });
 
 test("renders a break", () => {
@@ -52,5 +52,5 @@ test("renders a break", () => {
 
   expect(getByTestId("header")).toBeDefined();
   expect(getByTestId("break-list-item")).toBeDefined();
-  expect(queryByTestId("talk-list-item")).toBeNaN;
+  expect(queryByTestId("talk-list-item")).toBeNull();
 });

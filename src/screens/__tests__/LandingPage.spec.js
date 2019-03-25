@@ -17,7 +17,7 @@ test("given First as selected day, it will redirect", async () => {
 
   const { queryByTestId } = render(<LandingPage />);
 
-  expect(queryByTestId("landingpage-container")).toBeNaN;
+  expect(queryByTestId("landingpage-container")).toBeNull();
 
   // TODO: figure out how to check if Redirect gets called (no reason to test Redirect by itself)
 });
